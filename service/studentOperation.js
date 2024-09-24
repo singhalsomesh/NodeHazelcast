@@ -1,4 +1,4 @@
-const { connect,getHazelcastClient } = require('./../connection/hazelcastClient');
+const {getHazelcastClient } = require('./../connection/hazelcastClient');
 
 async function createStudent(body) {
     try {
