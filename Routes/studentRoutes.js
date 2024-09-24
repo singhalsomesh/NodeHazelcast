@@ -5,6 +5,7 @@ const studentRouter = express.Router();
 
 studentRouter
   .route('/')
+  .get(studentController.getStudentData)
   .post(studentController.createStudentData);
 
 // studentRouter
