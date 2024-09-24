@@ -16,6 +16,20 @@ async function createStudent(body) {
     }
 }
 
+async function getStudent(body) {
+    try {
+        if(getHazelcastClient() != undefined || getHazelcastClient() != null){
+            const map = await getHazelcastClient().getMap('student');
+            return map.get(body.key);
+        }else{
+            return false;
+        } 
+    } catch (err) {
+        console.error('Error creating entry:', err);
+    }
+}
+
 module.exports = {
-    createStudent
+    createStudent,
+    getStudent
 };
